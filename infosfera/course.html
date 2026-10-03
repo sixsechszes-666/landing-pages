@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Алгоритмы и структуры данных — ИНФОСФЕРА</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+  .course-hero { padding-top: clamp(130px, 18vh, 200px); padding-bottom: 40px; }
+  .crumbs { display:flex; gap:10px; align-items:center; color:var(--ink-faint); font-size:13px; margin-bottom:22px; }
+  .crumbs a:hover{ color:var(--lime); }
+  .course-hero h1 { font-size: clamp(34px, 6vw, 76px); font-weight:700; }
+  .course-meta { display:flex; gap:12px; flex-wrap:wrap; margin-top:26px; }
+  .chip { border:1px solid var(--hairline-strong); background:var(--surface); border-radius:999px; padding:8px 16px; font-size:13px; color:var(--ink-soft); }
+  .chip b{ color:var(--lime); font-weight:600; }
+
+  .progress-card { margin-top:30px; background:var(--surface); border:1px solid var(--hairline); border-radius:var(--radius-lg); padding:22px 26px; }
+  .progress-card .row{ display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; }
+  .progress-card .row span{ font-size:14px; color:var(--ink-soft); }
+  .progress-card .row b{ font-family:'Unbounded'; color:var(--lime); }
+  .ptrack{ height:8px; border-radius:8px; background:var(--hairline); overflow:hidden; }
+  .ptrack i{ display:block; height:100%; width:0; background:linear-gradient(90deg,var(--lime),var(--emerald)); transition:width 1s var(--ease-soft); box-shadow:0 0 16px var(--glow-lime); }
+
+  .course-body{ display:grid; grid-template-columns: 320px 1fr; gap:36px; align-items:start; }
+  @media(max-width:900px){ .course-body{ grid-template-columns:1fr; } .syllabus{ position:static !important; } }
+
+  .syllabus{ position:sticky; top:100px; background:var(--surface); border:1px solid var(--hairline); border-radius:var(--radius-lg); padding:16px; max-height:calc(100vh - 130px); overflow-y:auto; }
+  .syllabus h4{ font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--ink-faint); padding:8px 12px 14px; }
+  .mod{ display:flex; gap:12px; align-items:center; padding:12px 14px; border-radius:12px; font-size:14.5px; color:var(--ink-soft); cursor:pointer; transition:background .35s var(--ease-soft), color .35s; width:100%; text-align:left; }
+  .mod:hover{ background:var(--surface-2); color:var(--ink); }
+  .mod.active{ background:rgba(182,255,60,.1); color:var(--ink); }
+  .mod .dot{ width:24px; height:24px; border-radius:50%; border:1.5px solid var(--hairline-strong); display:grid; place-items:center; font-size:11px; flex-shrink:0; transition:.35s; }
+  .mod.done .dot{ background:var(--lime); border-color:var(--lime); color:#06120a; }
+  .mod.active .dot{ border-color:var(--lime); color:var(--lime); }
+  .mod .mtitle{ line-height:1.3; }
+
+  .lesson{ background:var(--surface); border:1px solid var(--hairline); border-radius:var(--radius-xl); padding:6px; }
+  .lesson__inner{ padding:clamp(26px,4vw,48px); border-radius:calc(var(--radius-xl) - 6px); background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.008)); box-shadow:inset 0 1px 1px rgba(255,255,255,.07); animation:fadeUp .6s var(--ease-soft); }
+  @keyframes fadeUp{ from{ opacity:0; transform:translateY(18px); } to{ opacity:1; transform:translateY(0); } }
+  .lesson h2{ font-size:clamp(26px,3.4vw,42px); margin:6px 0 18px; }
+  .lesson h3{ font-family:'Unbounded'; font-size:21px; font-weight:500; margin:38px 0 14px; }
+  .lesson p{ color:var(--ink-soft); margin-bottom:16px; font-size:16px; line-height:1.7; }
+  .lesson ul{ margin:0 0 18px 2px; list-style:none; }
+  .lesson li{ color:var(--ink-soft); padding:7px 0 7px 26px; position:relative; font-size:15.5px; line-height:1.6; }
+  .lesson li::before{ content:'▸'; color:var(--lime); position:absolute; left:4px; }
+  .lesson b{ color:var(--ink); }
+  .lesson .two{ display:grid; grid-template-columns:1fr 1fr; gap:14px; margin:24px 0; }
+  @media(max-width:640px){ .lesson .two{ grid-template-columns:1fr; } }
+  .infobox{ border:1px solid var(--hairline); border-radius:16px; padding:22px; background:var(--surface); }
+  .infobox h4{ font-family:'Unbounded'; font-size:15px; font-weight:500; margin-bottom:8px; color:var(--ink); }
+  .infobox p{ font-size:14px; margin:0; }
+
+  .callout{ border-left:2px solid var(--lime); background:rgba(182,255,60,.06); border-radius:0 12px 12px 0; padding:18px 22px; margin:24px 0; }
+  .callout p{ margin:0; color:var(--ink); font-size:15px; }
+  .callout .tag{ font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:var(--lime); display:block; margin-bottom:8px; font-weight:700; }
+
+  .code{ background:#06100b; border:1px solid var(--hairline); border-radius:14px; overflow:hidden; margin:22px 0; font-family:'SFMono-Regular',ui-monospace,'Cascadia Code',monospace; }
+  .code__bar{ display:flex; align-items:center; gap:8px; padding:12px 16px; border-bottom:1px solid var(--hairline); }
+  .code__bar i{ width:11px; height:11px; border-radius:50%; background:var(--hairline-strong); }
+  .code__bar i:nth-child(1){ background:#ff5f57; } .code__bar i:nth-child(2){ background:#febc2e; } .code__bar i:nth-child(3){ background:var(--lime); }
+  .code__bar span{ margin-left:auto; font-size:12px; color:var(--ink-faint); }
+  .code pre{ margin:0; padding:20px 22px; overflow-x:auto; font-size:13.5px; line-height:1.75; color:#cfe9d8; }
+  .code .k{ color:#b6ff3c; } .code .f{ color:#6affc0; } .code .c{ color:#5f7a6b; font-style:italic; } .code .s{ color:#ffd479; } .code .n{ color:#7fd0ff; }
+
+  .bigO{ display:grid; grid-template-columns:repeat(auto-fit,minmax(120px,1fr)); gap:12px; margin:26px 0; }
+  .bigO .o{ border:1px solid var(--hairline); border-radius:14px; padding:18px; text-align:center; transition:.4s var(--ease-soft); }
+  .bigO .o:hover{ transform:translateY(-5px); border-color:var(--lime); background:rgba(182,255,60,.06); }
+  .bigO .o b{ font-family:'Unbounded'; font-size:20px; display:block; }
+  .bigO .o.good b{ color:var(--lime); } .bigO .o.mid b{ color:#febc2e; } .bigO .o.bad b{ color:#ff7a6e; }
+  .bigO .o small{ color:var(--ink-faint); font-size:12px; }
+
+  /* QUIZ */
+  .quiz{ margin-top:44px; border-top:1px solid var(--hairline); padding-top:36px; }
+  .quiz__head{ display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:6px; flex-wrap:wrap; }
+  .quiz__head h3{ margin:0; }
+  .qcounter{ font-size:13px; color:var(--ink-faint); display:inline-flex; align-items:center; gap:8px; }
+  .qdots{ display:inline-flex; gap:5px; }
+  .qdots i{ width:8px; height:8px; border-radius:50%; background:var(--hairline-strong); transition:.3s; }
+  .qdots i.on{ background:var(--lime); box-shadow:0 0 8px var(--glow-lime); }
+  .qdots i.cur{ transform:scale(1.4); background:var(--mint); }
+  .q{ font-family:'Unbounded'; font-size:20px; font-weight:500; margin:18px 0 6px; line-height:1.3; }
+  .qsub{ color:var(--ink-faint); font-size:13px; margin-bottom:22px; }
+  .opt{ display:flex; align-items:center; gap:14px; width:100%; text-align:left; padding:16px 20px; border:1px solid var(--hairline); border-radius:14px; background:var(--surface); margin-bottom:12px; font-size:15.5px; color:var(--ink-soft); transition:transform .3s var(--ease-soft), border-color .3s, background .3s; }
+  .opt:hover:not(:disabled){ transform:translateX(4px); border-color:var(--hairline-strong); color:var(--ink); }
+  .opt .mk{ width:26px; height:26px; border-radius:8px; border:1.5px solid var(--hairline-strong); display:grid; place-items:center; flex-shrink:0; font-size:13px; transition:.3s; }
+  .opt.correct{ border-color:var(--lime); background:rgba(182,255,60,.1); color:var(--ink); }
+  .opt.correct .mk{ background:var(--lime); border-color:var(--lime); color:#06120a; }
+  .opt.wrong{ border-color:#ff7a6e; background:rgba(255,122,110,.08); }
+  .opt.wrong .mk{ border-color:#ff7a6e; color:#ff7a6e; }
+  .opt:disabled{ cursor:default; }
+  .quiz-result{ margin-top:14px; padding:18px 22px; border-radius:14px; font-size:15px; line-height:1.6; opacity:0; transform:translateY(10px); transition:.5s var(--ease-soft); display:none; }
+  .quiz-result.show{ opacity:1; transform:translateY(0); display:block; }
+  .quiz-result.ok{ background:rgba(182,255,60,.1); border:1px solid var(--lime); color:var(--ink); }
+  .quiz-result.no{ background:rgba(255,122,110,.08); border:1px solid #ff7a6e; color:var(--ink); }
+  .qactions{ display:flex; justify-content:flex-end; margin-top:18px; }
+
+  .qscore{ text-align:center; padding:20px 0; animation:fadeUp .5s var(--ease-soft); }
+  .qscore .ring{ width:120px; height:120px; margin:0 auto 20px; border-radius:50%; display:grid; place-items:center; font-family:'Unbounded'; font-size:30px; position:relative; }
+  .qscore .ring span{ position:relative; z-index:1; }
+  .qscore h3{ margin:0 0 8px; }
+  .qscore p{ color:var(--ink-soft); max-width:42ch; margin:0 auto 22px; }
+  .badge-done{ display:inline-flex; align-items:center; gap:8px; background:rgba(182,255,60,.12); border:1px solid var(--lime); color:var(--lime); border-radius:999px; padding:8px 18px; font-size:13px; font-weight:600; margin-bottom:20px; }
+
+  .lesson-nav{ display:flex; justify-content:space-between; gap:16px; margin-top:36px; flex-wrap:wrap; }
+  .lesson-nav .btn--ghost.disabled{ opacity:.35; pointer-events:none; }
+</style>
+</head>
+<body>
+
+<div class="aurora" aria-hidden="true">
+  <div class="orb orb--lime" data-speed="0.14"></div>
+  <div class="orb orb--emerald" data-speed="0.08"></div>
+  <div class="orb orb--mint" data-speed="0.2"></div>
+</div>
+<div class="grain" aria-hidden="true"></div>
+<div class="scroll-prog" id="scrollProg" aria-hidden="true"></div>
+
+<nav class="nav" id="nav">
+  <a class="brand" href="index.html"><span class="mark"></span>ИНФОСФЕРА</a>
+  <div class="nav-links">
+    <a href="index.html#disciplines">Дисциплины</a>
+    <a href="index.html#path">Траектория</a>
+    <a href="index.html#why">Платформа</a>
+  </div>
+  <a class="nav-cta" href="index.html#disciplines">Все курсы <span class="pip">↗</span></a>
+  <button class="burger" id="burger" aria-label="Меню"><span></span><span></span></button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html#disciplines">Дисциплины</a>
+  <a href="index.html#path">Траектория</a>
+  <a href="index.html#why">Платформа</a>
+  <a href="index.html">На главную ↗</a>
+</div>
+
+<header class="course-hero">
+  <div class="wrap">
+    <div class="crumbs reveal"><a href="index.html">Главная</a> / <a href="index.html#disciplines">Дисциплины</a> / <span style="color:var(--ink-soft)">Алгоритмы и структуры данных</span></div>
+    <span class="eyebrow reveal">Дисциплина 01 · Базовый блок</span>
+    <h1 class="reveal d1" style="margin-top:22px">Алгоритмы и<br><span class="grad-text">структуры данных</span></h1>
+    <div class="course-meta reveal d2">
+      <span class="chip">◷ <b>10</b> модулей</span>
+      <span class="chip">❓ <b id="totalQ">—</b> вопросов в тестах</span>
+      <span class="chip">⏱ <b>~60</b> часов</span>
+      <span class="chip">★ Уровень: <b>средний</b></span>
+    </div>
+    <div class="progress-card reveal d3">
+      <div class="row"><span>Пройдено модулей: <b id="progCount" style="font-family:inherit;color:var(--ink)">0 / 10</b></span><b id="progPct">0%</b></div>
+      <div class="ptrack"><i id="progBar"></i></div>
+    </div>
+  </div>
+</header>
+
+<section style="padding-top:30px">
+  <div class="wrap">
+    <div class="course-body">
+      <aside class="syllabus reveal" id="syllabus">
+        <h4>Программа курса</h4>
+        <!-- generated by course.js -->
+      </aside>
+      <article class="lesson reveal d1" id="lessonRoot">
+        <!-- generated by course.js -->
+      </article>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="author">
+      <div class="author__inner">
+        <span class="author__tag">Проект</span>
+        <div class="author__name">Демонстрационный ресурс</div>
+        <div class="author__meta">
+          <span class="chip-a">Тема: <b>информационные дисциплины</b></span>
+          <span class="chip-a">Стек: <b>HTML, CSS, JavaScript</b></span>
+        </div>
+      </div>
+    </div>
+    <div class="foot-base" style="border:none;padding-top:0">
+      <a class="brand" href="index.html"><span class="mark"></span>ИНФОСФЕРА</a>
+      <span>© 2026 · Учебный проект</span>
+    </div>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+<script src="course.js"></script>
+<script src="demo.js"></script>
+</body>
+</html>

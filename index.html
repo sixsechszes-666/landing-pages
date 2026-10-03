@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Лендинги и интерактивные курсы</title>
+<meta name="description" content="Учебные и демонстрационные лендинги на чистом HTML, CSS и JavaScript.">
+<style>
+  :root {
+    --bg: #0b0c0e;
+    --panel: #14161a;
+    --panel-2: #1b1e24;
+    --line: #262a31;
+    --text: #e8eaee;
+    --muted: #8b929d;
+    --accent: #e5484d;
+    --accent-soft: rgba(229, 72, 77, 0.12);
+    --radius: 14px;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font: 16px/1.6 "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  .wrap {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  header {
+    padding: 84px 0 56px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .eyebrow {
+    display: inline-block;
+    font: 500 12px/1 ui-monospace, "SF Mono", Consolas, monospace;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+    border: 1px solid var(--accent-soft);
+    background: var(--accent-soft);
+    border-radius: 999px;
+    padding: 7px 14px;
+    margin-bottom: 26px;
+  }
+
+  h1 {
+    font-size: clamp(34px, 5.2vw, 58px);
+    line-height: 1.06;
+    letter-spacing: -0.02em;
+    margin: 0 0 20px;
+    max-width: 15em;
+  }
+
+  .lead {
+    color: var(--muted);
+    font-size: 18px;
+    max-width: 60ch;
+    margin: 0 0 32px;
+  }
+
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .chip {
+    font: 500 13px/1 ui-monospace, "SF Mono", Consolas, monospace;
+    color: var(--muted);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 8px 14px;
+  }
+
+  main { padding: 56px 0 96px; }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 26px;
+  }
+
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: border-color 0.18s ease, transform 0.18s ease;
+  }
+
+  .card:hover {
+    border-color: #3a4049;
+    transform: translateY(-3px);
+  }
+
+  .shot {
+    display: block;
+    aspect-ratio: 16 / 10;
+    background: var(--panel-2);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .shot img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+  }
+
+  .body { padding: 22px 22px 24px; display: flex; flex-direction: column; gap: 12px; flex: 1; }
+
+  h2 {
+    font-size: 20px;
+    letter-spacing: -0.01em;
+    margin: 0;
+  }
+
+  .card p {
+    color: var(--muted);
+    font-size: 15px;
+    margin: 0;
+  }
+
+  .stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-top: 2px;
+  }
+
+  .stack span {
+    font: 500 11px/1 ui-monospace, "SF Mono", Consolas, monospace;
+    letter-spacing: 0.04em;
+    color: var(--muted);
+    background: var(--panel-2);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 6px 9px;
+  }
+
+  .actions {
+    display: flex;
+    gap: 10px;
+    margin-top: auto;
+    padding-top: 14px;
+  }
+
+  .btn {
+    flex: 1;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 11px 16px;
+    border-radius: 9px;
+    border: 1px solid var(--line);
+    background: var(--panel-2);
+    transition: background 0.15s ease, border-color 0.15s ease;
+  }
+
+  .btn:hover { border-color: #454b55; }
+
+  .btn--primary {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+  }
+
+  .btn--primary:hover { background: #f05257; border-color: #f05257; }
+
+  footer {
+    border-top: 1px solid var(--line);
+    padding: 30px 0 60px;
+    color: var(--muted);
+    font-size: 14px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: space-between;
+  }
+
+  @media (max-width: 640px) {
+    header { padding: 56px 0 40px; }
+    .actions { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <span class="eyebrow">Портфолио вёрстки</span>
+    <h1>Лендинги и интерактивные курсы на чистом HTML, CSS и JavaScript</h1>
+    <p class="lead">
+      Четыре учебных и демонстрационных проекта: адаптивная вёрстка, анимации,
+      интерактивные тренажёры и генерация контента на стороне клиента.
+      Без фреймворков и сборщиков, каждый проект открывается одним файлом.
+    </p>
+    <div class="meta">
+      <span class="chip">4 проекта</span>
+      <span class="chip">адаптив от 360px</span>
+      <span class="chip">CSS 15-25 КБ на проект</span>
+      <span class="chip">видео-демо</span>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <div class="grid">
+
+      <article class="card">
+        <a class="shot" href="bastion/index.html">
+          <img src="demo/bastion.jpg" alt="BASTION: система подготовки по информационной безопасности" loading="lazy">
+        </a>
+        <div class="body">
+          <h2>BASTION</h2>
+          <p>
+            Система подготовки по информационной безопасности: модули-уроки,
+            прогресс прохождения и вступительный контроль. Тёмная тема,
+            терминальная эстетика, анимация появления блоков.
+          </p>
+          <div class="stack"><span>HTML</span><span>CSS</span><span>JS</span><span>прогресс-бар</span></div>
+          <div class="actions">
+            <a class="btn btn--primary" href="bastion/index.html">Открыть</a>
+            <a class="btn" href="demo/bastion.mp4">Видео</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <a class="shot" href="weblab/index.html">
+          <img src="demo/weblab.jpg" alt="WEBLAB: образовательная платформа по веб-технологиям" loading="lazy">
+        </a>
+        <div class="body">
+          <h2>WEBLAB</h2>
+          <p>
+            Платформа по веб-технологиям: программа обучения, живые примеры кода
+            и демо-курс. Самый крупный CSS в наборе, разбор флексов и сеток
+            показан прямо на странице.
+          </p>
+          <div class="stack"><span>HTML</span><span>CSS 22 КБ</span><span>JS</span><span>демо-курс</span></div>
+          <div class="actions">
+            <a class="btn btn--primary" href="weblab/index.html">Открыть</a>
+            <a class="btn" href="demo/weblab.mp4">Видео</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <a class="shot" href="infosfera/index.html">
+          <img src="demo/infosfera.jpg" alt="ИНФОСФЕРА: цифровой ресурс по информационным дисциплинам" loading="lazy">
+        </a>
+        <div class="body">
+          <h2>ИНФОСФЕРА</h2>
+          <p>
+            Цифровой образовательный ресурс: каталог дисциплин, траектория
+            обучения и интерактивные визуализации алгоритмов сортировки
+            и поиска.
+          </p>
+          <div class="stack"><span>HTML</span><span>CSS 25 КБ</span><span>JS</span><span>визуализации</span></div>
+          <div class="actions">
+            <a class="btn btn--primary" href="infosfera/index.html">Открыть</a>
+            <a class="btn" href="demo/infosfera.mp4">Видео</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <a class="shot" href="sachet-label/index.html">
+          <img src="demo/sachet-label.jpg" alt="Вёрстка этикетки саше" loading="lazy">
+        </a>
+        <div class="body">
+          <h2>Этикетка саше</h2>
+          <p>
+            Печатная этикетка, свёрстанная в одном HTML-файле: точные размеры
+            под высечку, пиктограммы в SVG и текст, подготовленный к печати.
+          </p>
+          <div class="stack"><span>HTML</span><span>CSS</span><span>SVG</span><span>печать</span></div>
+          <div class="actions">
+            <a class="btn btn--primary" href="sachet-label/index.html">Открыть</a>
+            <a class="btn" href="demo/sachet-label.mp4">Видео</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap" style="display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;width:100%">
+    <span>Учебные и демонстрационные проекты. Вёрстка, анимации, интерактив.</span>
+    <span>HTML · CSS · JavaScript</span>
+  </div>
+</footer>
+
+</body>
+</html>

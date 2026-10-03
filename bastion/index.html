@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BASTION // Информационная безопасность — система подготовки</title>
+<meta name="description" content="BASTION — учебная платформа по информационной безопасности: криптография, сетевая защита, анализ угроз, пентест и цифровая криминалистика.">
+<link rel="stylesheet" href="styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+</head>
+<body>
+
+<div class="scanlines" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+<div class="vignette" aria-hidden="true"></div>
+<div class="prog" id="prog" aria-hidden="true"></div>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <a class="nav__brand" href="index.html"><span class="mk">B</span><b>BASTION</b><sup>®</sup></a>
+  <div class="nav__links">
+    <a href="#modules">Модули</a>
+    <a href="#protocol">Протокол</a>
+    <a href="#system">Система</a>
+    <a href="course.html">Курс</a>
+  </div>
+  <div class="nav__right">
+    <div class="nav__stat"><span class="dot"></span>System Online</div>
+    <a class="nav__cta" href="#modules">&gt;_ Доступ</a>
+    <button class="burger" id="burger" aria-label="Меню"><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile" id="mobile">
+  <a href="#modules">Модули</a><a href="#protocol">Протокол</a><a href="#system">Система</a><a href="course.html">Курс</a>
+</div>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero__meta">
+    <span class="id">UNIT / SEC-09 · REV 2.6</span>
+    <span>LAT 52.9670 // LON 36.0694</span>
+    <span id="clock">--:--:--</span>
+  </div>
+  <div class="hero__grid">
+    <div class="hero__left">
+      <div class="hero__tag reveal">Направление 09.03.02 · Информационная безопасность</div>
+      <h1 class="reveal">
+        <span class="red">ЗАЩИТА</span><br>
+        ДАННЫХ<br>
+        <span class="out">БЕЗ</span> КОМПРОМИССОВ
+      </h1>
+      <p class="hero__sub reveal">// BASTION — учебная система подготовки специалистов по информационной безопасности. Криптография, сетевая защита, анализ угроз, тестирование на проникновение. Теория, практика, контроль.</p>
+      <div class="hero__act reveal">
+        <a class="btn btn--red" href="#modules">Список модулей <span class="ar">→</span></a>
+        <a class="btn" href="course.html">Запустить курс</a>
+      </div>
+    </div>
+    <div class="term reveal">
+      <div class="term__bar"><span class="x on"></span><span class="x"></span><span class="x"></span>bastion@sec:~<span>TTY1</span></div>
+      <div class="term__body" id="term">
+        <div><span class="c">$</span> <span class="w">init --module=infosec</span></div>
+        <div><span class="g">[OK]</span> загрузка ядра безопасности...</div>
+        <div><span class="g">[OK]</span> проверка целостности данных</div>
+        <div><span class="g">[OK]</span> шифрование канала AES-256</div>
+        <div><span class="r">[!]</span> обнаружена попытка доступа</div>
+        <div><span class="c">$</span> <span class="w">deny --source=unknown</span></div>
+        <div><span class="g">[OK]</span> угроза нейтрализована</div>
+        <div><span class="c">$</span> <span class="w">access --user=student</span></div>
+        <div><span class="g">[OK]</span> доступ разрешён <span class="cursor"></span></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker__t">
+    <span>Криптография</span><span>Сетевая защита</span><span>Пентест</span><span>Форензика</span><span>Анализ угроз</span><span>Защита ОС</span><span>SIEM</span>
+    <span>Криптография</span><span>Сетевая защита</span><span>Пентест</span><span>Форензика</span><span>Анализ угроз</span><span>Защита ОС</span><span>SIEM</span>
+  </div>
+</div>
+
+<!-- STATS -->
+<section class="stats" id="system">
+  <div class="scell reveal"><div class="num"><span class="red">10</span></div><div class="cap">// боевых модулей</div></div>
+  <div class="scell reveal"><div class="num" data-count="200">0</div><div class="cap">// лабораторных работ</div></div>
+  <div class="scell reveal"><div class="num" data-count="850">0</div><div class="cap">// контрольных задач</div></div>
+  <div class="scell reveal"><div class="num" data-count="24" data-suffix="/7">0</div><div class="cap">// доступ к полигону</div></div>
+</section>
+
+<!-- MODULES -->
+<section id="modules">
+  <div class="shead">
+    <h2 class="reveal">[ 01 ] Боевые модули</h2>
+    <div class="meta reveal"><span class="red">10 UNITS</span><br>STATUS: ACTIVE</div>
+  </div>
+  <div class="modules">
+    <a href="course.html" class="mrow reveal"><div class="ix">[01]</div><div class="nm">Основы информационной безопасности</div><div class="ds">Триада CIA, модели, политика безопасности, базовые принципы защиты информации.</div><div class="tg">CORE / БАЗА</div><div class="go">→</div></a>
+    <a href="course.html" class="mrow reveal"><div class="ix">[02]</div><div class="nm">Криптография</div><div class="ds">Симметричное и асимметричное шифрование, хеши, ЭЦП, протоколы обмена ключами.</div><div class="tg">CRYPTO</div><div class="go">→</div></a>
+    <a href="course.html" class="mrow reveal"><div class="ix">[03]</div><div class="nm">Сетевая безопасность</div><div class="ds">Модель OSI, межсетевые экраны, VPN, IDS/IPS, защита периметра сети.</div><div class="tg">NETWORK</div><div class="go">→</div></a>
+    <a href="course.html" class="mrow reveal"><div class="ix">[04]</div><div class="nm">Модель угроз и атаки</div><div class="ds">Векторы атак, классификация угроз, OWASP, моделирование рисков.</div><div class="tg">THREAT</div><div class="go">→</div></a>
+    <a href="course.html" class="mrow reveal"><div class="ix">[05]</div><div class="nm">Аутентификация и доступ</div><div class="ds">Парольная защита, 2FA, биометрия, модели контроля доступа RBAC/ABAC.</div><div class="tg">ACCESS</div><div class="go">→</div></a>
+    <a href="course.html" class="mrow reveal"><div class="ix">[06]</div><div class="nm">Защита ОС и приложений</div><div class="ds">Харднинг систем, права доступа, песочницы, безопасная разработка.</div><div class="tg">HARDENING</div><div class="go">→</div></a>
+    <a href="course.html" class="mrow reveal"><div class="ix">[07]</div><div class="nm">Анализ вредоносного ПО</div><div class="ds">Типы малвари, статический и динамический анализ, индикаторы компрометации.</div><div class="tg">MALWARE</div><div class="go">→</div></a>
+    <a href="course.html" class="mrow reveal"><div class="ix">[08]</div><div class="nm">Тестирование на проникновение</div><div class="ds">Этапы пентеста, разведка, эксплуатация, отчётность. Этичный хакинг.</div><div class="tg">PENTEST</div><div class="go">→</div></a>
+    <a href="course.html" class="mrow reveal"><div class="ix">[09]</div><div class="nm">Цифровая криминалистика</div><div class="ds">Сбор и анализ доказательств, восстановление данных, цепочка хранения.</div><div class="tg">FORENSIC</div><div class="go">→</div></a>
+    <a href="course.html" class="mrow reveal"><div class="ix">[10]</div><div class="nm">Управление инцидентами</div><div class="ds">Реагирование на инциденты, SIEM, СУИБ, ISO 27001, аудит безопасности.</div><div class="tg">SOC / SIEM</div><div class="go">→</div></a>
+  </div>
+</section>
+
+<!-- PROTOCOL -->
+<section id="protocol">
+  <div class="shead">
+    <h2 class="reveal">[ 02 ] Протокол подготовки</h2>
+    <div class="meta reveal">4 PHASE<br><span class="red">SEQUENTIAL</span></div>
+  </div>
+  <div class="proto">
+    <div class="pcell reveal"><div class="n">PHASE 01</div><h3>Брифинг</h3><p>// Сжатая теория с техническими схемами. Только суть, без воды.</p></div>
+    <div class="pcell reveal"><div class="n">PHASE 02</div><h3>Полигон</h3><p>// Практика на учебных стендах. Атака и защита в контролируемой среде.</p></div>
+    <div class="pcell reveal"><div class="n">PHASE 03</div><h3>Контроль</h3><p>// Тестирование с мгновенной проверкой. Без права на ошибку.</p></div>
+    <div class="pcell reveal"><div class="n">PHASE 04</div><h3>Допуск</h3><p>// Закрытие модуля и подтверждение компетенций. Доступ к следующему уровню.</p></div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section>
+  <div class="shead">
+    <h2 class="reveal">[ 03 ] Тактико-технические</h2>
+    <div class="meta reveal">SPEC SHEET<br><span class="red">// 06</span></div>
+  </div>
+  <div class="feats">
+    <div class="fcell reveal"><div class="ic">&gt;_</div><h3>Терминал в браузере</h3><p>// Никаких установок. Практика и контроль кода прямо на странице урока.</p></div>
+    <div class="fcell reveal"><div class="ic">▤</div><h3>Высокая плотность</h3><p>// Технические данные, схемы атак и защиты в сжатом телеметрическом формате.</p></div>
+    <div class="fcell reveal"><div class="ic">↯</div><h3>Контроль прогресса</h3><p>// Каждый закрытый модуль фиксируется. Виден статус допуска по дисциплине.</p></div>
+    <div class="fcell reveal"><div class="ic">⛨</div><h3>Реальные сценарии</h3><p>// Угрозы и атаки из практики ИБ, а не абстрактные примеры из учебника.</p></div>
+    <div class="fcell reveal"><div class="ic">◳</div><h3>Любой терминал</h3><p>// Адаптивный интерфейс от мобильного устройства до рабочей станции.</p></div>
+    <div class="fcell reveal"><div class="ic">✓</div><h3>Допуск и сертификат</h3><p>// Контроль после каждого модуля и итоговое подтверждение по курсу.</p></div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="lbl lbl-red reveal" style="margin-bottom:20px">// ДОСТУП РАЗРЕШЁН</div>
+  <h2 class="reveal">Войти<br>в систему</h2>
+  <p class="reveal">Выбери модуль, получи допуск и пройди вступительный контроль. Полигон работает круглосуточно.</p>
+  <a class="btn btn--red reveal" href="course.html">&gt;_ Запустить демо-курс <span class="ar">→</span></a>
+</section>
+
+<!-- AUTHOR -->
+<section class="author">
+  <span class="lbl">// Проект</span>
+  <div class="fio">ДЕМО-КУРС</div>
+  <div class="sub">ИНТЕРАКТИВНЫЙ КУРС // ВЁРСТКА И АНИМАЦИИ</div>
+</section>
+
+<footer>
+  <span>© 2026 BASTION® // <b>INFOSEC TRAINING SYSTEM</b></span>
+  <span>BUILD 2.6 · UNIT SEC-09 · <b class="mono">ALL SYSTEMS NOMINAL</b></span>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

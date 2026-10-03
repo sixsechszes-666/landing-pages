@@ -1,0 +1,428 @@
+<title>Саше «Полынь горькая»</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Prata&family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=PT+Sans+Narrow:wght@400;700&display=swap">
+<style>
+  :root {
+    /* бумага — белая, этикетка выглядит одинаково в любой теме */
+    --paper: #FFFFFF;
+    --paper-deep: #F7F7F4;
+    --ink: #1E2A20;
+    --ink-soft: #55604F;
+    --ink-faint: #8A9080;
+    --sage: #8B9C7E;
+    --gold: #A8904C;
+
+    /* окружение страницы — тоже белое */
+    --bg: #FFFFFF;
+    --bg-grain: #FFFFFF;
+    --fg: #2A332A;
+    --fg-soft: #6B7268;
+    --rule: #E2E2DA;
+
+    --step-0: 0.95rem;
+    --step-1: 1.15rem;
+    --step-2: 1.6rem;
+    --step-3: 2.4rem;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      /* фон остаётся белым по требованию — этикетка печатная */
+      --bg: #FFFFFF;
+      --bg-grain: #FFFFFF;
+      --fg: #2A332A;
+      --fg-soft: #6B7268;
+      --rule: #E2E2DA;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #FFFFFF;
+    --bg-grain: #FFFFFF;
+    --fg: #2A332A;
+    --fg-soft: #6B7268;
+    --rule: #E2E2DA;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background-color: var(--bg);
+    background-image: none;
+    color: var(--fg);
+    font-family: Spectral, "Iowan Old Style", Georgia, serif;
+    font-size: var(--step-0);
+    line-height: 1.6;
+    padding: clamp(1.25rem, 4vw, 3.5rem) 1.25rem 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(1.75rem, 4vw, 3rem);
+  }
+
+  .page-note {
+    max-width: 32rem;
+    text-align: center;
+    color: var(--fg-soft);
+    font-family: "PT Sans Narrow", "Arial Narrow", sans-serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    line-height: 1.8;
+    margin: 0;
+  }
+
+  .sheet {
+    display: flex;
+    flex-wrap: wrap;
+    gap: clamp(1.5rem, 4vw, 2.5rem);
+    justify-content: center;
+    align-items: flex-start;
+  }
+/* CSS-PART-2 */
+  .label {
+    position: relative;
+    background-color: var(--paper);
+    background-image:
+      repeating-linear-gradient(0deg, rgba(30,42,32,.013) 0 1px, transparent 1px 3px),
+      radial-gradient(ellipse at 50% 0%, #FFFFFF 0%, var(--paper) 58%, var(--paper-deep) 100%);
+    color: var(--ink);
+    border: 1px solid var(--rule);
+    box-shadow: 0 14px 30px -20px rgba(30,42,32,.35);
+  }
+
+  /* лицевая сторона — 70 × 100 мм */
+  .label--front {
+    width: 70mm;
+    min-height: 100mm;
+    padding: 7mm 5.5mm 5mm;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.4mm;
+    border-radius: 32mm 32mm 1.2mm 1.2mm;
+  }
+
+  /* обратная сторона — строго 80 × 80 мм, размеры в мм, чтобы экран совпадал с печатью */
+  .label--back {
+    width: 80mm;
+    height: 80mm;
+    padding: 5mm 5mm 5.6mm;
+    display: flex;
+    flex-direction: column;
+    gap: 1.7mm;
+    border-radius: 1.2mm;
+    font-size: 2.4mm;
+    overflow: hidden;
+  }
+
+  .label::after {
+    content: "";
+    position: absolute;
+    inset: 2.2mm;
+    border: 1px solid rgba(30,42,32,.26);
+    border-radius: inherit;
+    pointer-events: none;
+  }
+  .label--back::after { inset: 2.2mm; }
+
+  /* — лицевая сторона — */
+  .eyebrow {
+    font-family: "PT Sans Narrow", "Arial Narrow", sans-serif;
+    font-size: 2.2mm;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin: 0;
+  }
+
+  .sprig { display: block; width: 12mm; height: auto; }
+  .sprig--small { width: 8mm; }
+
+  .title {
+    font-family: Prata, Georgia, serif;
+    font-weight: 400;
+    font-size: 8.4mm;
+    line-height: 1.02;
+    margin: 0;
+    text-wrap: balance;
+  }
+  .title em {
+    display: block;
+    font-family: Spectral, Georgia, serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 0.44em;
+    letter-spacing: 0.02em;
+    color: var(--ink-soft);
+    margin-top: 1.4mm;
+  }
+
+  .latin {
+    font-family: Spectral, Georgia, serif;
+    font-style: italic;
+    font-size: 2.6mm;
+    color: var(--ink-faint);
+    margin: 0;
+  }
+
+  .divider {
+    display: flex;
+    align-items: center;
+    gap: 1.6mm;
+    width: 100%;
+    color: var(--gold);
+  }
+  .divider span {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(168,144,76,.9), transparent);
+  }
+  .divider b {
+    width: 1.3mm; height: 1.3mm;
+    background: currentColor;
+    transform: rotate(45deg);
+  }
+
+  .uses {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.8mm;
+    width: 100%;
+  }
+  .uses li {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.7mm;
+    text-align: left;
+    font-size: 2.7mm;
+    line-height: 1.4;
+    color: var(--ink);
+  }
+  .uses svg { flex: none; width: 3.2mm; height: 3.2mm; margin-top: 0.5mm; color: var(--sage); }
+  .uses strong { font-weight: 600; }
+  .uses small {
+    display: block;
+    font-size: 2.3mm;
+    color: var(--ink-soft);
+    line-height: 1.38;
+  }
+
+  .weight {
+    font-family: "PT Sans Narrow", "Arial Narrow", sans-serif;
+    font-size: 2.3mm;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin: 0;
+  }
+/* CSS-PART-3 */
+  /* — обратная сторона, всё в мм под формат 80 × 80 — */
+  .back-head {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8mm;
+    border-bottom: 1px solid rgba(30,42,32,.2);
+    padding-bottom: 1.6mm;
+  }
+  .back-head span {
+    font-family: "PT Sans Narrow", "Arial Narrow", sans-serif;
+    font-size: 2.1mm;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    line-height: 1.2;
+  }
+  .back-head h2 {
+    font-family: Prata, Georgia, serif;
+    font-weight: 400;
+    font-size: 4.1mm;
+    line-height: 1.08;
+    margin: 0;
+  }
+
+  .how {
+    margin: 0;
+    display: grid;
+    gap: 1.4mm;
+  }
+  .how div {
+    display: grid;
+    grid-template-columns: 4.6mm 1fr;
+    gap: 0 1.4mm;
+  }
+  .how dt {
+    grid-column: 1;
+    font-family: "PT Sans Narrow", "Arial Narrow", sans-serif;
+    font-weight: 700;
+    font-size: 2.4mm;
+    letter-spacing: 0.08em;
+    color: var(--gold);
+    font-variant-numeric: tabular-nums;
+    line-height: 1.45;
+  }
+  .how dd {
+    grid-column: 2;
+    margin: 0;
+    font-size: 2.3mm;
+    line-height: 1.36;
+  }
+
+  .care {
+    border-top: 1px solid rgba(30,42,32,.2);
+    padding-top: 1.5mm;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9mm;
+    font-size: 2.1mm;
+    line-height: 1.34;
+    color: var(--ink-soft);
+  }
+  .care p { margin: 0; }
+  .care .caution {
+    font-family: "PT Sans Narrow", "Arial Narrow", sans-serif;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    font-size: 1.95mm;
+    line-height: 1.3;
+    color: var(--ink);
+  }
+
+  .maker {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2mm;
+    border-top: 1px solid rgba(30,42,32,.2);
+    padding-top: 2.4mm;
+    font-family: "PT Sans Narrow", "Arial Narrow", sans-serif;
+    font-size: 2.1mm;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    line-height: 1.3;
+  }
+  .maker .sprig--small { width: 7mm; }
+
+  @page {
+    size: A4;
+    margin: 14mm;
+  }
+
+  @media print {
+    body {
+      background: #fff;
+      padding: 0;
+      gap: 8mm;
+      display: block;
+    }
+    .page-note {
+      color: #8A9080;
+      margin: 0 0 8mm;
+    }
+    .sheet {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8mm;
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
+    .label {
+      box-shadow: none;
+      break-inside: avoid;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+  }
+</style>
+
+<p class="page-note">Этикетка для саше · лицевая 70 × 100 мм · обратная 80 × 80 мм</p>
+
+<div class="sheet">
+
+  <article class="label label--front">
+    <p class="eyebrow">Травяное саше</p>
+
+    <svg class="sprig" viewBox="0 0 80 54" fill="none" stroke="#8B9C7E" stroke-width="1.3" stroke-linecap="round" aria-hidden="true">
+      <path d="M40 52V16"/>
+      <path d="M40 44c-7 0-12-4-14-10 7-1 12 2 14 10zM40 44c7 0 12-4 14-10-7-1-12 2-14 10z"/>
+      <path d="M40 32c-6 0-10-3.5-12-9 6-1 10 2 12 9zM40 32c6 0 10-3.5 12-9-6-1-10 2-12 9z"/>
+      <path d="M40 21c-4.5 0-7.5-3-9-7.5 4.5-.8 7.5 1.7 9 7.5zM40 21c4.5 0 7.5-3 9-7.5-4.5-.8-7.5 1.7-9 7.5z"/>
+      <path d="M40 16c-2 0-3.5-2-4-5 2.2-.4 3.6 1.2 4 5zM40 16c2 0 3.5-2 4-5-2.2-.4-3.6 1.2-4 5z"/>
+      <circle cx="40" cy="7" r="2.2"/>
+    </svg>
+
+    <h1 class="title">Полынь<em>горькая</em></h1>
+    <p class="latin">Artemísia absínthium</p>
+
+    <div class="divider"><span></span><b></b><span></span></div>
+
+    <ul class="uses">
+      <li>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 3v18M12 8l5-4M12 8L7 4M12 14l6-3M12 14l-6-3"/>
+        </svg>
+        <span><strong>Защита от моли и насекомых</strong><small>Горькие эфирные масла отпугивают моль, кожеедов и чешуйниц — без химии и запаха нафталина.</small></span>
+      </li>
+      <li>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M8 20c-2-3-1-6 1.5-8.5C12 9 13 6 12 3c4 2 6 5.5 6 9 0 4.5-3 8-6 8z"/>
+          <path d="M8 20h9"/>
+        </svg>
+        <span><strong>Аромат для шкафа и дома</strong><small>Сухой полынно-травяной запах освежает белье, полки, ящики комода и обувные полки.</small></span>
+      </li>
+      <li>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 21s-7-4.5-7-10a7 7 0 0 1 14 0c0 5.5-7 10-7 10z"/>
+          <path d="M12 14v-6M12 11c-1.6 0-2.7-1-3.2-2.6 1.7-.3 2.9.5 3.2 2.6zM12 11c1.6 0 2.7-1 3.2-2.6-1.7-.3-2.9.5-3.2 2.6z"/>
+        </svg>
+        <span><strong>Сбор ручной работы</strong><small>Собрано в период цветения и высушено в тени, без добавок и ароматизаторов.</small></span>
+      </li>
+    </ul>
+
+    <div class="divider"><span></span><b></b><span></span></div>
+
+    <p class="weight">Нетто 20 г · 1 мешочек</p>
+  </article>
+
+  <article class="label label--back">
+    <div class="back-head">
+      <span>Полынь · саше</span>
+      <h2>Как использовать</h2>
+    </div>
+
+    <dl class="how">
+      <div><dt>01</dt><dd>Слегка помните мешочек в руках — так раскрывается аромат.</dd></div>
+      <div><dt>02</dt><dd>Положите между сложенным бельем, повесьте на плечики или уберите в ящик комода.</dd></div>
+      <div><dt>03</dt><dd>На шкаф — 2–3 саше: вверху, где скапливается моль, и на полке с шерстью.</dd></div>
+      <div><dt>04</dt><dd>Разминайте раз в 2–3 недели, чтобы вернуть силу запаха.</dd></div>
+    </dl>
+
+    <div class="care">
+      <p>Аромат и защитное действие сохраняются <strong>6–9 месяцев</strong>. Затем замените сбор на свежий.</p>
+      <p>Храните в сухом месте, без прямого солнца. Не мочить.</p>
+      <p class="caution">Не для приема внутрь. Держите вне доступа детей и домашних животных. Возможна индивидуальная чувствительность к запаху.</p>
+    </div>
+
+    <div class="maker">
+      <span>Сбор&nbsp;— ручная работа</span>
+      <svg class="sprig sprig--small" viewBox="0 0 80 54" fill="none" stroke="#B29A56" stroke-width="1.4" stroke-linecap="round" aria-hidden="true">
+        <path d="M40 52V16"/>
+        <path d="M40 42c-7 0-12-4-14-10 7-1 12 2 14 10zM40 42c7 0 12-4 14-10-7-1-12 2-14 10z"/>
+        <path d="M40 28c-5 0-8.5-3-10-7.5 5-.8 8.5 1.7 10 7.5zM40 28c5 0 8.5-3 10-7.5-5-.8-8.5 1.7-10 7.5z"/>
+        <circle cx="40" cy="10" r="2"/>
+      </svg>
+      <span>Сезон 2026</span>
+    </div>
+  </article>
+
+</div>
+
+

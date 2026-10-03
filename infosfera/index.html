@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ИНФОСФЕРА — Цифровой образовательный ресурс по информационным дисциплинам</title>
+<meta name="description" content="Современная образовательная платформа по информационным системам и технологиям: алгоритмы, базы данных, сети, ИИ, кибербезопасность и не только.">
+<link rel="stylesheet" href="styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+</head>
+<body>
+
+<!-- Ambient -->
+<div class="aurora" aria-hidden="true">
+  <div class="orb orb--lime"    data-speed="0.18"></div>
+  <div class="orb orb--emerald" data-speed="0.10"></div>
+  <div class="orb orb--mint"    data-speed="0.26"></div>
+</div>
+<div class="grain" aria-hidden="true"></div>
+<div class="scroll-prog" id="scrollProg" aria-hidden="true"></div>
+
+<!-- Navigation -->
+<nav class="nav" id="nav">
+  <a class="brand" href="index.html"><span class="mark"></span>ИНФОСФЕРА</a>
+  <div class="nav-links">
+    <a href="#disciplines">Дисциплины</a>
+    <a href="#path">Траектория</a>
+    <a href="#why">Платформа</a>
+    <a href="course.html">Курс-демо</a>
+  </div>
+  <a class="nav-cta" href="#disciplines">Начать учиться <span class="pip">↗</span></a>
+  <button class="burger" id="burger" aria-label="Меню"><span></span><span></span></button>
+</nav>
+
+<!-- Mobile menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#disciplines">Дисциплины</a>
+  <a href="#path">Траектория</a>
+  <a href="#why">Платформа</a>
+  <a href="course.html">Курс-демо</a>
+  <a href="#disciplines">Начать ↗</a>
+</div>
+
+<!-- HERO -->
+<header class="hero" id="hero">
+  <div class="wrap">
+    <span class="eyebrow reveal">Направление 09.03.02 · Информационные системы и технологии</span>
+    <h1 style="margin-top:26px">
+      <span class="line"><span>Изучай</span></span>
+      <span class="line"><span class="grad-text">информационные</span></span>
+      <span class="line"><span>дисциплины</span></span>
+    </h1>
+    <p>Цифровой образовательный ресурс нового поколения: интерактивная теория, практика по коду, тесты с мгновенной проверкой и трекинг прогресса — от алгоритмов до искусственного интеллекта.</p>
+    <div class="hero-actions">
+      <a class="btn btn--primary" href="#disciplines">Каталог дисциплин <span class="pip">↗</span></a>
+      <a class="btn btn--ghost" href="course.html">Открыть демо-курс</a>
+    </div>
+
+    <div class="marquee" style="margin-top:90px">
+      <div class="marquee-track">
+        <span>Алгоритмы<span></span></span><span>Базы данных<span></span></span><span>Сети<span></span></span><span>Машинное обучение<span></span></span><span>Кибербезопасность<span></span></span><span>Операционные системы<span></span></span><span>Web<span></span></span>
+        <span>Алгоритмы<span></span></span><span>Базы данных<span></span></span><span>Сети<span></span></span><span>Машинное обучение<span></span></span><span>Кибербезопасность<span></span></span><span>Операционные системы<span></span></span><span>Web<span></span></span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- STATS -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="stats-grid">
+      <div class="stat reveal">      <div class="num grad-text" data-count="10">0</div>  <div class="label">дисциплин в каталоге</div></div>
+      <div class="stat reveal d1">    <div class="num grad-text" data-count="240">0</div> <div class="label">уроков и лекций</div></div>
+      <div class="stat reveal d2">    <div class="num grad-text" data-count="1200">0</div><div class="label">практических задач</div></div>
+      <div class="stat reveal d3">    <div class="num grad-text" data-count="98" data-suffix="%">0</div><div class="label">доходят до сертификата</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- DISCIPLINES -->
+<section id="disciplines">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="reveal">Каталог <span class="grad-text">дисциплин</span></h2>
+      <p class="reveal d1">Десять ключевых курсов направления. Каждый — это структурированные модули, конспекты, разбор кода и автотесты.</p>
+    </div>
+
+    <div class="bento" id="bento">
+      <!-- Feature card -->
+      <a href="course.html" class="card feature c-wide reveal" style="grid-row: span 2">
+        <span class="card__glow" data-glow></span>
+        <div class="card__inner">
+          <span class="ix">01 / Базовый блок</span>
+          <div class="ico"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h10M4 17h7"/><circle cx="19" cy="15" r="3"/></svg></div>
+          <h3>Алгоритмы и структуры данных</h3>
+          <p>Сложность, сортировки, графы, деревья, динамическое программирование. Визуализация работы алгоритмов в реальном времени и тренажёр Big-O.</p>
+          <div class="meta"><span>◷ 14 модулей</span><span>◆ 180 задач</span><span>★ Сложно</span></div>
+          <span class="go">Открыть курс <span class="arr">→</span></span>
+        </div>
+      </a>
+
+      <a href="course.html" class="card c-tall reveal d1">
+        <span class="card__glow" data-glow></span>
+        <div class="card__inner">
+          <span class="ix">02</span>
+          <div class="ico"><svg viewBox="0 0 24 24"><path d="M8 3v4M16 3v4M5 9l3 3-3 3M19 15l-3-3 3-3"/></svg></div>
+          <h3>Программирование</h3>
+          <p>Python и C++ с нуля: синтаксис, ООП, паттерны.</p>
+          <div class="meta"><span>◷ 12 модулей</span></div>
+          <span class="go">Открыть <span class="arr">→</span></span>
+        </div>
+      </a>
+
+      <a href="course.html" class="card c-third reveal">
+        <span class="card__glow" data-glow></span>
+        <div class="card__inner">
+          <span class="ix">03</span>
+          <div class="ico"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6M5 12v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6"/></svg></div>
+          <h3>Базы данных</h3>
+          <p>SQL, нормализация, индексы, транзакции, NoSQL.</p>
+          <span class="go">Открыть <span class="arr">→</span></span>
+        </div>
+      </a>
+
+      <a href="course.html" class="card c-third reveal d1">
+        <span class="card__glow" data-glow></span>
+        <div class="card__inner">
+          <span class="ix">04</span>
+          <div class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></div>
+          <h3>Информационные системы</h3>
+          <p>Архитектура ИС, ЖЦ, UML, проектирование, BPMN.</p>
+          <span class="go">Открыть <span class="arr">→</span></span>
+        </div>
+      </a>
+
+      <a href="course.html" class="card c-third reveal d2">
+        <span class="card__glow" data-glow></span>
+        <div class="card__inner">
+          <span class="ix">05</span>
+          <div class="ico"><svg viewBox="0 0 24 24"><circle cx="6" cy="6" r="2"/><circle cx="18" cy="6" r="2"/><circle cx="12" cy="18" r="2"/><path d="M6 8v3a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V8M12 13v3"/></svg></div>
+          <h3>Компьютерные сети</h3>
+          <p>Модель OSI, TCP/IP, маршрутизация, протоколы.</p>
+          <span class="go">Открыть <span class="arr">→</span></span>
+        </div>
+      </a>
+
+      <a href="course.html" class="card c-half reveal">
+        <span class="card__glow" data-glow></span>
+        <div class="card__inner">
+          <span class="ix">06</span>
+          <div class="ico"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M4 9h16M8 4v5"/></svg></div>
+          <h3>Операционные системы</h3>
+          <p>Процессы и потоки, планирование, память, файловые системы, синхронизация и взаимоблокировки.</p>
+          <div class="meta"><span>◷ 10 модулей</span><span>◆ 90 задач</span></div>
+          <span class="go">Открыть <span class="arr">→</span></span>
+        </div>
+      </a>
+
+      <a href="course.html" class="card c-half reveal d1">
+        <span class="card__glow" data-glow></span>
+        <div class="card__inner">
+          <span class="ix">07</span>
+          <div class="ico"><svg viewBox="0 0 24 24"><path d="M3 9h18M3 9l3-5h12l3 5M6 9v9a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V9"/></svg></div>
+          <h3>Web-технологии</h3>
+          <p>HTML, CSS, JavaScript, REST API, фреймворки и принципы построения современных интерфейсов.</p>
+          <div class="meta"><span>◷ 11 модулей</span><span>◆ 120 задач</span></div>
+          <span class="go">Открыть <span class="arr">→</span></span>
+        </div>
+      </a>
+
+      <a href="course.html" class="card c-third reveal">
+        <span class="card__glow" data-glow></span>
+        <div class="card__inner">
+          <span class="ix">08</span>
+          <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
+          <h3>Информационная безопасность</h3>
+          <p>Криптография, угрозы, защита данных, аудит.</p>
+          <span class="go">Открыть <span class="arr">→</span></span>
+        </div>
+      </a>
+
+      <a href="course.html" class="card c-third reveal d1">
+        <span class="card__glow" data-glow></span>
+        <div class="card__inner">
+          <span class="ix">09</span>
+          <div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M6 6l2 2M16 16l2 2M18 6l-2 2M8 16l-2 2"/></svg></div>
+          <h3>ИИ и машинное обучение</h3>
+          <p>Регрессия, нейросети, NLP, компьютерное зрение.</p>
+          <span class="go">Открыть <span class="arr">→</span></span>
+        </div>
+      </a>
+
+      <a href="course.html" class="card c-third reveal d2">
+        <span class="card__glow" data-glow></span>
+        <div class="card__inner">
+          <span class="ix">10</span>
+          <div class="ico"><svg viewBox="0 0 24 24"><rect x="7" y="7" width="10" height="10" rx="1"/><path d="M9 3v4M15 3v4M9 17v4M15 17v4M3 9h4M3 15h4M17 9h4M17 15h4"/></svg></div>
+          <h3>Архитектура ЭВМ</h3>
+          <p>Процессор, память, ассемблер, конвейеризация.</p>
+          <span class="go">Открыть <span class="arr">→</span></span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- PATH -->
+<section id="path">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="reveal">Образовательная <span class="grad-text">траектория</span></h2>
+      <p class="reveal d1">От первой строчки кода до защищённого проекта. Каждый этап подкреплён практикой и обратной связью.</p>
+    </div>
+    <div class="feat-grid">
+      <div class="feat reveal" style="--w:90%">
+        <div class="fnum">Этап 01</div><h3>Теория и конспекты</h3>
+        <p>Структурированные лекции с интерактивными схемами, формулами и примерами. Читается за вечер, остаётся надолго.</p>
+        <div class="bar"><i></i></div>
+      </div>
+      <div class="feat reveal d1" style="--w:75%">
+        <div class="fnum">Этап 02</div><h3>Практика и код</h3>
+        <p>Встроенный редактор кода с автопроверкой. Пиши, запускай, получай мгновенный фидбек прямо в браузере.</p>
+        <div class="bar"><i></i></div>
+      </div>
+      <div class="feat reveal d2" style="--w:96%">
+        <div class="fnum">Этап 03</div><h3>Тесты и сертификат</h3>
+        <p>Адаптивные тесты по каждому модулю и итоговый проект. Закрываешь курс — получаешь подтверждение компетенций.</p>
+        <div class="bar"><i></i></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section id="why">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="reveal">Почему <span class="grad-text">ИНФОСФЕРА</span></h2>
+      <p class="reveal d1">Платформа спроектирована как продукт: скорость, ясность, удовольствие от обучения.</p>
+    </div>
+    <div class="bento">
+      <div class="card c-half reveal">
+        <div class="card__inner">
+          <div class="ico"><svg viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg></div>
+          <h3>Мгновенно и интерактивно</h3>
+          <p>Никаких pdf-портянок. Анимированные визуализации алгоритмов, живые графики и редактор кода прямо на странице урока.</p>
+        </div>
+      </div>
+      <div class="card c-half reveal d1">
+        <div class="card__inner">
+          <div class="ico"><svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg></div>
+          <h3>Видимый прогресс</h3>
+          <p>Каждый шаг сохраняется. Дашборд показывает, что пройдено, что осталось, и сколько до сертификата по дисциплине.</p>
+        </div>
+      </div>
+      <div class="card c-third reveal">
+        <div class="card__inner">
+          <div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6 8-6s8 2 8 6"/></svg></div>
+          <h3>Для студентов и преподавателей</h3>
+          <p>Готовые программы курсов под ФГОС и инструменты для контроля.</p>
+        </div>
+      </div>
+      <div class="card c-third reveal d1">
+        <div class="card__inner">
+          <div class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 9h18M7 14h5"/></svg></div>
+          <h3>Любое устройство</h3>
+          <p>Адаптивно от телефона до 4K-монитора. Учись где угодно.</p>
+        </div>
+      </div>
+      <div class="card c-third reveal d2">
+        <div class="card__inner">
+          <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/><circle cx="12" cy="12" r="5"/></svg></div>
+          <h3>Современный стек</h3>
+          <p>Актуальные технологии и инструменты индустрии, а не теория из 2005-го.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section>
+  <div class="wrap">
+    <div class="cta-banner reveal">
+      <span class="eyebrow" style="margin-bottom:24px">Доступ открыт</span>
+      <h2>Готов начать <span class="grad-text">путь в IT?</span></h2>
+      <p>Выбери дисциплину, открой первый модуль и пройди вступительный тест. Это бесплатно и займёт пару минут.</p>
+      <a class="btn btn--primary" href="course.html" style="margin-inline:auto">Открыть демо-курс <span class="pip">↗</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="index.html"><span class="mark"></span>ИНФОСФЕРА</a>
+        <p class="blurb">Цифровой образовательный ресурс по информационным дисциплинам направления «Информационные системы и технологии».</p>
+      </div>
+      <div>
+        <h4>Дисциплины</h4>
+        <a href="course.html">Алгоритмы</a>
+        <a href="course.html">Базы данных</a>
+        <a href="course.html">Сети</a>
+        <a href="course.html">ИИ и ML</a>
+      </div>
+      <div>
+        <h4>Платформа</h4>
+        <a href="#path">Траектория</a>
+        <a href="#why">Возможности</a>
+        <a href="course.html">Демо-курс</a>
+      </div>
+      <div>
+        <h4>Связь</h4>
+        <a href="#">Поддержка</a>
+        <a href="#">Для вузов</a>
+        <a href="#">Telegram</a>
+      </div>
+    </div>
+    <div class="author">
+      <div class="author__inner">
+        <span class="author__tag">Проект</span>
+        <div class="author__name">Демонстрационный ресурс</div>
+        <div class="author__meta">
+          <span class="chip-a">Тема: <b>информационные дисциплины</b></span>
+          <span class="chip-a">Стек: <b>HTML, CSS, JavaScript</b></span>
+        </div>
+      </div>
+    </div>
+    <div class="foot-base">
+      <span>© 2026 ИНФОСФЕРА. Учебный проект.</span>
+      <span>Сделано с ♥ к информатике</span>
+    </div>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+<script src="demo.js"></script>
+</body>
+</html>

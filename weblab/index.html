@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WEBLAB — Образовательная платформа по веб-технологиям и интернет-разработке</title>
+<meta name="description" content="WEBLAB — современная платформа для изучения веб-разработки: HTML, CSS, JavaScript, адаптивная вёрстка, фреймворки, REST API и backend.">
+<link rel="stylesheet" href="styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+</head>
+<body>
+
+<div class="bg-deco" aria-hidden="true">
+  <div class="blob blob--1" data-speed="0.12"></div>
+  <div class="blob blob--2" data-speed="0.07"></div>
+</div>
+<div class="prog" id="prog" aria-hidden="true"></div>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <a class="brand" href="index.html"><span class="logo">&lt;/&gt;</span>WEB<b>LAB</b></a>
+  <div class="nav-links">
+    <a href="#courses">Курсы</a>
+    <a href="#road">Траектория</a>
+    <a href="#why">Платформа</a>
+    <a href="course.html">Демо-курс</a>
+  </div>
+  <a class="btn btn--primary" href="#courses">Начать <span class="pip">↗</span></a>
+  <button class="burger" id="burger" aria-label="Меню"><span></span><span></span></button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#courses">Курсы</a>
+  <a href="#road">Траектория</a>
+  <a href="#why">Платформа</a>
+  <a href="course.html">Демо-курс</a>
+</div>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow reveal">Направление 09.03.02 · Веб-технологии</span>
+        <h1 class="reveal d1" style="margin-top:22px">Научись<br>создавать <span class="grad-text">сайты</span><br>с нуля</h1>
+        <p class="reveal d2">WEBLAB — образовательная платформа по веб-технологиям и интернет-разработке. От первого тега HTML до интерактивных приложений: теория, практика в редакторе и тесты с проверкой.</p>
+        <div class="hero-actions reveal d3">
+          <a class="btn btn--primary" href="#courses">Каталог курсов <span class="pip">↗</span></a>
+          <a class="btn btn--ghost" href="course.html">Открыть демо-курс</a>
+        </div>
+        <div class="hero-tags reveal d4">
+          <span class="tag">&lt;<b>html</b>&gt;</span>
+          <span class="tag"><b>css</b> { }</span>
+          <span class="tag"><b>JS</b></span>
+          <span class="tag"><b>React</b></span>
+          <span class="tag"><b>API</b></span>
+        </div>
+      </div>
+      <div class="reveal d2">
+        <div class="browser">
+          <div class="browser__bar"><i></i><i></i><i></i><span class="browser__url">https://weblab.dev</span></div>
+          <div class="browser__body">
+<pre class="code"><span class="com">&lt;!-- Первая страница --&gt;</span>
+<span class="tag-c">&lt;!DOCTYPE html&gt;</span>
+<span class="tag-c">&lt;html</span> <span class="atr">lang</span>=<span class="str">"ru"</span><span class="tag-c">&gt;</span>
+  <span class="tag-c">&lt;head&gt;</span>
+    <span class="tag-c">&lt;title&gt;</span>Привет, веб!<span class="tag-c">&lt;/title&gt;</span>
+  <span class="tag-c">&lt;/head&gt;</span>
+  <span class="tag-c">&lt;body&gt;</span>
+    <span class="tag-c">&lt;h1</span> <span class="atr">class</span>=<span class="str">"hello"</span><span class="tag-c">&gt;</span>
+      Я учусь в WEBLAB
+    <span class="tag-c">&lt;/h1&gt;</span>
+  <span class="tag-c">&lt;/body&gt;</span>
+<span class="tag-c">&lt;/html&gt;</span></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="marquee reveal">
+      <div class="marquee-track">
+        <span>HTML5<span></span></span><span>CSS3<span></span></span><span>JavaScript<span></span></span><span>Flexbox<span></span></span><span>Grid<span></span></span><span>React<span></span></span><span>Node.js<span></span></span><span>REST API<span></span></span><span>Git<span></span></span>
+        <span>HTML5<span></span></span><span>CSS3<span></span></span><span>JavaScript<span></span></span><span>Flexbox<span></span></span><span>Grid<span></span></span><span>React<span></span></span><span>Node.js<span></span></span><span>REST API<span></span></span><span>Git<span></span></span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- STATS -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="stats">
+      <div class="stat reveal"><div class="num grad-text" data-count="10">0</div><div class="label">курсов в программе</div></div>
+      <div class="stat reveal d1"><div class="num grad-text" data-count="180">0</div><div class="label">уроков и практик</div></div>
+      <div class="stat reveal d2"><div class="num grad-text" data-count="900">0</div><div class="label">заданий по коду</div></div>
+      <div class="stat reveal d3"><div class="num grad-text" data-count="100" data-suffix="%">0</div><div class="label">в браузере, без установок</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- COURSES -->
+<section id="courses">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="reveal">Программа <span class="grad-text">обучения</span></h2>
+      <p class="reveal d1">Десять курсов — путь от вёрстки статичных страниц до интерактивных веб-приложений.</p>
+    </div>
+
+    <div class="grid">
+      <a href="course.html" class="tile span2 reveal">
+        <span class="ix">01 / Базовый блок</span>
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M3 9h18M3 9l2.5-5h13L21 9M5 9v9a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V9"/></svg></div>
+        <h3>HTML5 — структура и семантика</h3>
+        <p>Теги, атрибуты, семантическая разметка, формы, таблицы и медиа. Основа, на которой держится любая веб-страница.</p>
+        <div class="meta"><span>◷ 12 уроков</span><span>◆ 70 задач</span><span>★ Старт</span></div>
+        <span class="go">Открыть курс <span class="arr">→</span></span>
+      </a>
+
+      <a href="course.html" class="tile reveal d1">
+        <span class="ix">02</span>
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M4 4h16l-1.5 16L12 22l-6.5-2z"/><path d="M16 8H9l.4 4H16l-.5 4-3.5 1"/></svg></div>
+        <h3>CSS3 — стили и вёрстка</h3>
+        <p>Селекторы, Flexbox, Grid, анимации.</p>
+        <span class="go">Открыть <span class="arr">→</span></span>
+      </a>
+
+      <a href="course.html" class="tile reveal d2">
+        <span class="ix">03</span>
+        <div class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 12v3a1.5 1.5 0 0 1-3 0M13 16c0 1 1 1.5 2 1.5s2-.5 2-1.5-1-1.3-2-1.6-2-.6-2-1.5 1-1.4 2-1.4 1.7.4 1.9 1"/></svg></div>
+        <h3>JavaScript — основы</h3>
+        <p>Переменные, функции, типы, логика.</p>
+        <span class="go">Открыть <span class="arr">→</span></span>
+      </a>
+
+      <a href="course.html" class="tile reveal">
+        <span class="ix">04</span>
+        <div class="ico"><svg viewBox="0 0 24 24"><rect x="2" y="6" width="14" height="10" rx="2"/><path d="M18 9h4v9a2 2 0 0 1-2 2H8M6 20h6"/></svg></div>
+        <h3>Адаптивная вёрстка</h3>
+        <p>Медиазапросы, mobile-first, em/rem.</p>
+        <span class="go">Открыть <span class="arr">→</span></span>
+      </a>
+
+      <a href="course.html" class="tile reveal d1">
+        <span class="ix">05</span>
+        <div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M3 12h4M17 12h4M12 3v4M12 17v4"/></svg></div>
+        <h3>DOM и события</h3>
+        <p>Дерево документа, клики, обработчики.</p>
+        <span class="go">Открыть <span class="arr">→</span></span>
+      </a>
+
+      <a href="course.html" class="tile span2 reveal d2">
+        <span class="ix">06</span>
+        <div class="ico"><svg viewBox="0 0 24 24"><circle cx="6" cy="6" r="2.5"/><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="12" r="2.5"/><path d="M8 7l8 4M8 17l8-4M6 8.5v7"/></svg></div>
+        <h3>Git и инструменты разработчика</h3>
+        <p>Системы контроля версий, ветки, коммиты, GitHub, командная работа и развёртывание проекта.</p>
+        <div class="meta"><span>◷ 9 уроков</span><span>◆ 60 задач</span></div>
+        <span class="go">Открыть курс <span class="arr">→</span></span>
+      </a>
+
+      <a href="course.html" class="tile reveal">
+        <span class="ix">07</span>
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h10"/><circle cx="18" cy="17" r="2"/></svg></div>
+        <h3>REST API и fetch</h3>
+        <p>HTTP, JSON, запросы к серверу.</p>
+        <span class="go">Открыть <span class="arr">→</span></span>
+      </a>
+
+      <a href="course.html" class="tile reveal d1">
+        <span class="ix">08</span>
+        <div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="2.4"/><ellipse cx="12" cy="12" rx="10" ry="4.2"/><ellipse cx="12" cy="12" rx="10" ry="4.2" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4.2" transform="rotate(120 12 12)"/></svg></div>
+        <h3>Фреймворки: React</h3>
+        <p>Компоненты, состояние, JSX.</p>
+        <span class="go">Открыть <span class="arr">→</span></span>
+      </a>
+
+      <a href="course.html" class="tile reveal d2">
+        <span class="ix">09</span>
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 2l8 4.5v9L12 20l-8-4.5v-9z"/><path d="M12 11v9M12 11L4 6.5M12 11l8-4.5"/></svg></div>
+        <h3>Backend на Node.js</h3>
+        <p>Сервер, маршруты, работа с данными.</p>
+        <span class="go">Открыть <span class="arr">→</span></span>
+      </a>
+
+      <a href="course.html" class="tile reveal d3">
+        <span class="ix">10</span>
+        <div class="ico"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></div>
+        <h3>Доступность и SEO</h3>
+        <p>a11y, мета-теги, оптимизация.</p>
+        <span class="go">Открыть <span class="arr">→</span></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ROADMAP -->
+<section id="road">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="reveal">Как проходит <span class="grad-text">обучение</span></h2>
+      <p class="reveal d1">Четыре шага в каждом курсе — от понимания до результата.</p>
+    </div>
+    <div class="road">
+      <div class="step reveal"><div class="n">1</div><h3>Теория</h3><p>Короткие уроки с примерами и схемами. Без воды — только нужное.</p></div>
+      <div class="step reveal d1"><div class="n">2</div><h3>Код</h3><p>Редактор прямо в браузере: пишешь, запускаешь, видишь результат.</p></div>
+      <div class="step reveal d2"><div class="n">3</div><h3>Тест</h3><p>Интерактивная проверка знаний с мгновенной обратной связью.</p></div>
+      <div class="step reveal d3"><div class="n">4</div><h3>Проект</h3><p>Собираешь свой сайт и закрепляешь навык на практике.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section id="why">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="reveal">Почему <span class="grad-text">WEBLAB</span></h2>
+      <p class="reveal d1">Платформа сделана как продукт: чисто, быстро, понятно.</p>
+    </div>
+    <div class="grid">
+      <div class="tile reveal">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg></div>
+        <h3>Всё в браузере</h3>
+        <p>Ничего не нужно устанавливать. Код пишется и запускается прямо на странице урока.</p>
+      </div>
+      <div class="tile reveal d1">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg></div>
+        <h3>Видимый прогресс</h3>
+        <p>Каждый пройденный модуль сохраняется. Видно, что сделано и сколько осталось.</p>
+      </div>
+      <div class="tile reveal d2">
+        <div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6 8-6s8 2 8 6"/></svg></div>
+        <h3>От нуля до результата</h3>
+        <p>Подходит новичкам: каждый курс начинается с азов и ведёт к реальному навыку.</p>
+      </div>
+      <div class="tile reveal d1">
+        <div class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 9h18M7 14h6"/></svg></div>
+        <h3>Любое устройство</h3>
+        <p>Адаптивный интерфейс от телефона до большого монитора.</p>
+      </div>
+      <div class="tile reveal d2">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg></div>
+        <h3>Актуальный стек</h3>
+        <p>Технологии, которые реально используют в индустрии сегодня.</p>
+      </div>
+      <div class="tile reveal d3">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <h3>Проверка знаний</h3>
+        <p>Тесты после каждого модуля и итоговый сертификат по курсу.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section>
+  <div class="wrap">
+    <div class="cta reveal">
+      <span class="eyebrow" style="background:rgba(255,255,255,.18);border-color:rgba(255,255,255,.3);color:#fff;margin-bottom:22px">Доступ открыт</span>
+      <h2>Сделай свой первый сайт уже сегодня</h2>
+      <p>Выбери курс, открой первый урок и напиши первую строчку кода. Бесплатно и прямо в браузере.</p>
+      <a class="btn btn--white" href="course.html" style="margin-inline:auto">Открыть демо-курс <span class="pip">↗</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- AUTHOR -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="author reveal">
+      <span class="tag-a">Проект</span>
+      <div class="name">Демонстрационный ресурс</div>
+      <div class="meta">
+        <span class="chip">Тема: <b>веб-технологии</b></span>
+        <span class="chip">Стек: <b>HTML, CSS, JavaScript</b></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a class="brand" href="index.html"><span class="logo">&lt;/&gt;</span>WEB<b>LAB</b></a>
+        <p class="blurb">Образовательная платформа по веб-технологиям и интернет-разработке.</p>
+      </div>
+      <div>
+        <h4>Курсы</h4>
+        <a href="course.html">HTML5</a><a href="course.html">CSS3</a><a href="course.html">JavaScript</a><a href="course.html">React</a>
+      </div>
+      <div>
+        <h4>Платформа</h4>
+        <a href="#road">Траектория</a><a href="#why">Возможности</a><a href="course.html">Демо-курс</a>
+      </div>
+      <div>
+        <h4>Связь</h4>
+        <a href="#">Поддержка</a><a href="#">Для вузов</a><a href="#">Telegram</a>
+      </div>
+    </div>
+    <div class="foot-base">
+      <span>© 2026 WEBLAB. Учебный проект.</span>
+      <span>Сделано с любовью к вебу</span>
+    </div>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+<script src="demo.js"></script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+# системный мусор
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# редакторы
+.vscode/
+.idea/
+*.swp
+
+# временное
+*.log
+_tmp/
+_cap/
